@@ -87,7 +87,7 @@ dynamic-product-explorer/
 
 ## Screenshots
 
-| Desktop (1366) | Mobile (375) |
+| Desktop  | Mobile  |
 |---|---|
 | <img src="screenshots/desktop.png" width="450" alt="Desktop screenshot"> | <img src="screenshots/mobile.png" width="160" alt="Mobile screenshot"> |
 
