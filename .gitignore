@@ -24,3 +24,6 @@ tsconfig.tsbuildinfo
 *.njsproj
 *.sln
 *.sw?
+
+# Assignment source PDF (not a deliverable)
+Session 2 project.pdf
