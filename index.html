@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ShopExplorer - Dynamic Product Explorer powered by DummyJSON API" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>ShopExplorer — Dynamic Product Explorer</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#" class="brand" aria-label="ShopExplorer home">
+          <span class="brand-mark" aria-hidden="true">◆</span>
+          ShopExplorer
+        </a>
+
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <ul>
+            <li><a href="#products-section">Products</a></li>
+            <li><a href="#categories-anchor">Categories</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-search">
+          <label for="search-input" class="sr-only">Search products</label>
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Search products..."
+            autocomplete="off"
+            aria-label="Search products by title"
+          />
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero container" aria-labelledby="hero-heading">
+        <div class="hero-text">
+          <h1 id="hero-heading">Discover products you’ll love</h1>
+          <p>Browse, search, and filter a curated catalog powered by DummyJSON. Clean, fast, and responsive.</p>
+        </div>
+      </section>
+
+      <section id="products-section" class="container controls" aria-labelledby="controls-heading">
+        <h2 id="controls-heading" class="sr-only">Product controls</h2>
+        <div class="controls-row">
+          <div class="control-group">
+            <label for="category-filter">Category</label>
+            <select id="category-filter" aria-label="Filter by category">
+              <option value="all">All Categories</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="sort-select">Sort by</label>
+            <select id="sort-select" aria-label="Sort products">
+              <option value="default">Default</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name: A → Z</option>
+            </select>
+          </div>
+
+          <p id="result-count" class="result-count" aria-live="polite" aria-atomic="true"></p>
+        </div>
+      </section>
+
+      <div id="categories-anchor" aria-hidden="true"></div>
+
+      <section class="container products-wrap" aria-labelledby="listing-heading">
+        <h2 id="listing-heading" class="section-title">Products</h2>
+
+        <div id="status" class="status" aria-live="polite" aria-atomic="true">
+          <p>Loading products...</p>
+        </div>
+
+        <div id="product-grid" class="product-grid" role="list"></div>
+      </section>
+
+      <section id="about" class="container about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About ShopExplorer</h2>
+        <p>
+          ShopExplorer is a lightweight, vanilla TypeScript showcase that fetches real product data from
+          <a href="https://dummyjson.com/products" target="_blank" rel="noreferrer">dummyjson.com/products</a>,
+          rendered entirely on the client. Search, category filtering, sorting and an accessible details modal are
+          built with semantic HTML, modern CSS and strict TypeScript — no frameworks.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; 2026 ShopExplorer — Dynamic Product Explorer</p>
+        <p class="muted">Data provided by DummyJSON</p>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-panel" role="document">
+        <button type="button" class="modal-close" aria-label="Close dialog" data-close-modal>&times;</button>
+        <img id="modal-image" class="modal-image" alt="" />
+        <div class="modal-body">
+          <p id="modal-category" class="modal-category"></p>
+          <h2 id="modal-title" class="modal-title"></h2>
+          <p id="modal-description" class="modal-desc"></p>
+          <p id="modal-price" class="modal-price"></p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
